@@ -19,24 +19,68 @@
         <div class="modal fade" id="usermodal">
             <div class="modal-dialog">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Adding or Updating Users</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    ...
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Adding or Updating Users</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <form id="adduser" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="form-group">
+                        <!-- Username -->
+                        <label>Name:</label>
+                        <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-dark">
+                                <i class="fas fa-user-alt text-light"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter Your Username" autocomplete="off" required>
+                        </div>
+
+                        <!-- Email -->
+                        <label>Email:</label>
+                        <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-dark">
+                                <i class="fas fa-envelope-open text-light"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Enter Your Email" autocomplete="off" required>
+                        </div>
+
+                        <!-- Mobile -->
+                        <label>Mobile:</label>
+                        <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-dark">
+                                <i class="fas fa-phone text-light"></i>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Enter Your Mobile" autocomplete="off" required
+                        maxlength="10" minlength="10">
+                        </div>
+
+                        <!-- Photo -->
+                        <label>Photo:</label>
+                        <div class="input-group">
+                        <label for="userphoto" class="custom-file-label"></label>
+                        <input type="file" class="custom-file-input" name="photo" id="userphoto">
+                        </div>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark">Submit</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+                    </form>
                 </div>
             </div>
         </div>
 
 
         <!-- input search and button section -->
-        <div class="row">
+        <div class="row mb-3 mt-3">
             <div class="col-10">
                 <div class="input-group">
                     <div class="input-group-prepend">
@@ -51,6 +95,50 @@
                 <button class="btn btn-dark">Add New User</button>
             </div>
         </div>
+
+        <!-- Table -->
+        <table class="table" id="usertable">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Mobile</th>
+                <th scope="col">Operations</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Picture1</th>
+                <td>Siraj</td>
+                <td>Siraj@gmail.com</td>
+                <td>0764793374</td>
+                <td>
+                    <span>Edit</span>
+                    <span>Profile</span>
+                    <span>Delete</span>
+                </td>
+            </tr>
+        </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <nav aria-label="...">
+            <ul class="pagination">
+                <li class="page-item disabled">
+                <a class="page-link">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active" aria-current="page">
+                <a class="page-link" href="#">2</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav>
+
     </div> 
 
 
